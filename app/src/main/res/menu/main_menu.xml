@@ -9,17 +9,22 @@
         <item
             android:id="@+id/nav_order"
             android:title="Order"
-            android:icon="@drawable/ic_baseline_home_24">
+            android:icon="@drawable/ic_baseline_shopping_cart_24">
         </item>
         <item
             android:id="@+id/nav_products"
             android:title="Products"
-            android:icon="@drawable/ic_baseline_home_24">
+            android:icon="@drawable/ic_sharp_archive_24">
         </item>
         <item
             android:id="@+id/nav_cate"
             android:title="Category"
-            android:icon="@drawable/ic_baseline_home_24">
+            android:icon="@drawable/ic_baseline_category_24">
+        </item>
+        <item
+            android:id="@+id/nav_staff"
+            android:title="Staff"
+            android:icon="@drawable/ic_baseline_people_outline_24">
         </item>
     </group>
         <item

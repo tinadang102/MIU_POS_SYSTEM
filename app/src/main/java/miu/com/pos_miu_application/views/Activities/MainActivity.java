@@ -16,10 +16,11 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
 import miu.com.pos_miu_application.R;
-import miu.com.pos_miu_application.views.Fragement.CategoryFragment;
+import miu.com.pos_miu_application.views.Fragement.CategoriesFragment;
 import miu.com.pos_miu_application.views.Fragement.MainFragment;
-import miu.com.pos_miu_application.views.Fragement.OrderFragment;
+import miu.com.pos_miu_application.views.Fragement.OrdersFragment;
 import miu.com.pos_miu_application.views.Fragement.ProductsFragment;
+import miu.com.pos_miu_application.views.Fragement.StaffsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -89,13 +90,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_home:
                 break;
             case R.id.nav_order:
-                replaceFragement(new OrderFragment());
+                replaceFragement(new OrdersFragment());
                 break;
             case R.id.nav_products:
                 replaceFragement(new ProductsFragment());
                 break;
             case R.id.nav_cate:
-                replaceFragement(new CategoryFragment());
+                replaceFragement(new CategoriesFragment());
+                break;
+            case R.id.nav_staff:
+                replaceFragement(new StaffsFragment());
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

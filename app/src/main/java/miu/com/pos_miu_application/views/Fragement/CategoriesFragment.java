@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import miu.com.pos_miu_application.R;
 
-public class CategoryFragment extends Fragment {
+public class CategoriesFragment extends Fragment {
 
     @Nullable
     @Override

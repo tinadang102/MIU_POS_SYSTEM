@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import miu.com.pos_miu_application.R;
 
-public class SettingFragment extends Fragment {
+public class SettingsFragment extends Fragment {
 
     @Nullable
     @Override
