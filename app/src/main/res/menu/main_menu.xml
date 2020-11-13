@@ -4,47 +4,47 @@
         <item
         android:id="@+id/nav_home"
         android:title="Home"
-        android:icon="@drawable/ic_baseline_home_24">
+        android:icon="@drawable/ic_home">
         </item>
         <item
             android:id="@+id/nav_order"
             android:title="Order"
-            android:icon="@drawable/ic_baseline_shopping_cart_24">
+            android:icon="@drawable/ic_cart">
         </item>
         <item
             android:id="@+id/nav_products"
             android:title="Products"
-            android:icon="@drawable/ic_sharp_archive_24">
+            android:icon="@drawable/ic_box">
+        </item>
+        <item
+            android:id="@+id/nav_customer"
+            android:title="Customer"
+            android:icon="@drawable/ic_customer_service">
         </item>
         <item
             android:id="@+id/nav_cate"
             android:title="Category"
-            android:icon="@drawable/ic_baseline_category_24">
+            android:icon="@drawable/ic_category">
         </item>
         <item
             android:id="@+id/nav_staff"
             android:title="Staff"
-            android:icon="@drawable/ic_baseline_people_outline_24">
+            android:icon="@drawable/ic_staff">
         </item>
     </group>
-        <item
+    <item
             android:title="Profile">
             <menu>
                 <group android:checkableBehavior="single">
                     <item
-                        android:id="@+id/nav_login"
+                        android:id="@+id/nav_switchAccount"
                         android:title="Login"
-                        android:icon="@drawable/ic_baseline_home_24">
-                    </item>
-                    <item
-                        android:id="@+id/nav_profile"
-                        android:title="Profile"
-                        android:icon="@drawable/ic_baseline_home_24">
+                        android:icon="@drawable/ic_switch">
                     </item>
                     <item
                         android:id="@+id/nav_logout"
                         android:title="Logout"
-                        android:icon="@drawable/ic_baseline_home_24">
+                        android:icon="@drawable/ic_logout">
                     </item>
                 </group>
             </menu>

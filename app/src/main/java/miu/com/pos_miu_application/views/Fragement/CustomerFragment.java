@@ -11,13 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import miu.com.pos_miu_application.R;
 
-public class ProductsFragment extends Fragment {
+public class CustomerFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_customer, container, false);
+        View view= inflater.inflate(R.layout.fragment_customer, container, false);
         return view;
     }
-
 }
