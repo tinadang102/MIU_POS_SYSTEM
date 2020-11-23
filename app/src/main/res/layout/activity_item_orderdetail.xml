@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgProductDetail"
+        android:layout_width="75sp"
+        android:layout_height="75sp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:layout_margin="2sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtNameDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên sản phẩm"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Size" />
+
+        <TextView
+            android:id="@+id/txtPriceDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đơn giá"
+            android:textSize="20sp"
+            android:textColor="#B2001F"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/imageView5"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
+
+        <TextView
+            android:background="#ECECEC"
+            android:id="@+id/txtName"
+            android:layout_width="50sp"
+            android:layout_height="70sp"
+            android:layout_weight="1"
+            android:text="1"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:textColor="#000000"/>
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_gravity="center"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    </LinearLayout>
+</LinearLayout>

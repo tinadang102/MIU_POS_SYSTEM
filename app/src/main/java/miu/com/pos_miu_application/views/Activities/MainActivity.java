@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void loadDefaultFragment() {
-        //Load Default fragment
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container_fragment, new MainFragment());
@@ -88,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_home:
+                replaceFragement(new MainFragment());
                 break;
             case R.id.nav_order:
                 replaceFragement(new OrdersFragment());
