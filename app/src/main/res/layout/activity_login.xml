@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".views.Activities.LoginActivity">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="320dp"
+        android:layout_height="230dp"
+        android:text="Login"
+        android:textSize="50sp"
+        tools:layout_editor_absoluteX="480dp"
+        tools:layout_editor_absoluteY="285dp"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,8 @@ package miu.com.pos_miu_application.views.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+//import androidx.appcompat.widget.SearchView;
+import android.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -11,6 +13,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
@@ -105,4 +109,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.search_bar, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search_bar, menu);
+        SearchView searchView = (SearchView) menu.findItem(R.id.search_view).getActionView();
+        searchView.setMaxWidth(Integer.MAX_VALUE);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 }
