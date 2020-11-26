@@ -132,6 +132,7 @@ public class MainFragment extends Fragment {
                 }
                 else
                     Toast.makeText(getActivity(),"Save successfully!",Toast.LENGTH_SHORT).show();
+                Reset();
             }
         });
         btnWallet.setOnClickListener(new View.OnClickListener() {
@@ -158,20 +159,23 @@ public class MainFragment extends Fragment {
                 btnPBCash.setBackgroundColor(getResources().getColor(R.color.btnChoose));
             }
         });
+
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                lstOrder.setAdapter(null);
-                edtTotal.setText("");
-                edtDiscount.setText("");
-                edtPay.setText("");
-                edtReceive.setText("");
-                edtReturn.setText("");
-                edtCusName.setText("");
+                Reset();
             }
         });
     }
-
+    private  void Reset(){
+        lstOrder.setAdapter(null);
+        edtTotal.setText("");
+        edtDiscount.setText("");
+        edtPay.setText("");
+        edtReceive.setText("");
+        edtReturn.setText("");
+        edtCusName.setText("");
+    }
     private void TinhTien(){
         for(int i=0;i<ds2.size();i++){
             Total= Total + ds2.get(i).getPrice();
