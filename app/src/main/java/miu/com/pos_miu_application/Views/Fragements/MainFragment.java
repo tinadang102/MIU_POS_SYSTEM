@@ -235,8 +235,7 @@ public class MainFragment extends Fragment {
 
     private void ShowItemOrder() {
         ds2=new ArrayList<Product>();
-        ds2.add(new Product("Higher Love",195.00,R.drawable.p1));
-        ds2.add(new Product("Frost Printed Hoodie",119.95,R.drawable.p2));
+
         orderDetailAdapter = new OrderDetailAdapter(getContext(),R.layout.fragment_main, ds2);
         lstOrder.setAdapter(orderDetailAdapter);
 
