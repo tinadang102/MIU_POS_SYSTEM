@@ -218,19 +218,19 @@
                 <Button
                     android:id="@+id/btnPBCash"
                     android:layout_margin="2sp"
-                    android:background="#DCDCDC"
+                    android:background="@drawable/stroke"
                     android:text="Pay by cash"></Button>
 
                 <Button
                     android:id="@+id/btnPBCard"
                     android:layout_margin="2sp"
-                    android:background="#DCDCDC"
+                    android:background="@drawable/stroke"
                     android:text="Pay by card"></Button>
 
                 <Button
                     android:id="@+id/btnWallet"
                     android:layout_margin="2sp"
-                    android:background="#DCDCDC"
+                    android:background="@drawable/stroke"
                     android:text="Momo wallet"></Button>
             </TableRow>
         </TableLayout>

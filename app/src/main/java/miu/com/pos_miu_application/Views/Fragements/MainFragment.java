@@ -41,7 +41,7 @@ public class MainFragment extends Fragment {
     ListView lstOrder;
     OrderDetailAdapter orderDetailAdapter;
     ProductAdapter productAdapter;
-    Button btnSaveMain, btnReset,btnPBCash,btnPBCard,btnWallet;
+    Button btnSaveMain, btnReset,btnPBCash,btnPBCard,btnWallet,btnAddCustom,btnCloseCustom;
     RadioButton rdOrder, rdShipment;
     ArrayList<Product>ds;
     ArrayList<Product>ds2;
@@ -62,15 +62,10 @@ public class MainFragment extends Fragment {
             ShowListProduct();
             ShowItemOrder();
             SpinnerFilter();
+            TinhTien();
 
         }catch (Exception ex){}
         addEvents();
-        for(int i=0;i<ds2.size();i++){
-            Total= Total + ds2.get(i).getPrice();
-        }
-        edtTotal.setText(Total+"");
-        edtDiscount.setText(""+0);
-        edtPay.setText(Double.parseDouble(edtTotal.getText().toString())-Double.parseDouble(edtDiscount.getText().toString())+"");
 
         return view;
     }
@@ -87,23 +82,37 @@ public class MainFragment extends Fragment {
     private void addEvents() {
         gvProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 Product sp= productAdapter.getItem(position);
-                Dialog dialog= new Dialog(getContext());
-                dialog.setContentView(R.layout.dialog_product);
+                final Dialog dialog= new Dialog(getContext());
+                dialog.setContentView(R.layout.activity_custom_product);
 
                 txtTenCustom= dialog.findViewById(R.id.txtTenCustom);
                 txtGiaCustom=dialog.findViewById(R.id.txtPriceCustom);
                 imgHinhCustom=dialog.findViewById(R.id.imgHinhCustom);
+                btnAddCustom=dialog.findViewById(R.id.btnAddCustom);
+                btnCloseCustom=dialog.findViewById(R.id.btnCloseCustom);
                 imgHinhCustom.setImageResource(sp.getImage());
                 txtTenCustom.setText(sp.getName());
-                txtGiaCustom.setText(sp.getPrice()+"");
+                txtGiaCustom.setText("$"+sp.getPrice());
                 dialog.show();
-
-                Toast.makeText(view.getContext(), "Hello",Toast.LENGTH_LONG).show();
-                /*intent= new Intent(getActivity(),custom_product.class);
-                intent.putExtra("id",position);
-                startActivity(intent);*/
+                btnCloseCustom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                btnAddCustom.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ds2.add(productAdapter.getItem(position));
+                        orderDetailAdapter = new OrderDetailAdapter(getContext(),R.layout.fragment_main, ds2);
+                        lstOrder.setAdapter(orderDetailAdapter);
+                        TinhTien();
+                        Toast.makeText(getActivity(),"Save successfully!",Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
             }
         });
         imgAddCus.setOnClickListener(new View.OnClickListener() {
@@ -149,9 +158,29 @@ public class MainFragment extends Fragment {
                 btnPBCash.setBackgroundColor(getResources().getColor(R.color.btnChoose));
             }
         });
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                lstOrder.setAdapter(null);
+                edtTotal.setText("");
+                edtDiscount.setText("");
+                edtPay.setText("");
+                edtReceive.setText("");
+                edtReturn.setText("");
+                edtCusName.setText("");
+            }
+        });
     }
 
+    private void TinhTien(){
+        for(int i=0;i<ds2.size();i++){
+            Total= Total + ds2.get(i).getPrice();
+        }
+        edtTotal.setText(Total+"");
+        edtDiscount.setText(""+0);
+        edtPay.setText(Double.parseDouble(edtTotal.getText().toString())-Double.parseDouble(edtDiscount.getText().toString())+"");
 
+    }
     private void addViews(View view) {
         imgAddCus=view.findViewById(R.id.imgAddCus);
         txtSelection=view.findViewById(R.id.txtSelection);
