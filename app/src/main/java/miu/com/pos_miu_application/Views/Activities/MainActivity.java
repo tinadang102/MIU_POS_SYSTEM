@@ -1,4 +1,4 @@
-package miu.com.pos_miu_application.views.Activities;
+package miu.com.pos_miu_application.Views.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,11 +20,12 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
 import miu.com.pos_miu_application.R;
-import miu.com.pos_miu_application.views.Fragement.CategoriesFragment;
-import miu.com.pos_miu_application.views.Fragement.MainFragment;
-import miu.com.pos_miu_application.views.Fragement.OrdersFragment;
-import miu.com.pos_miu_application.views.Fragement.ProductsFragment;
-import miu.com.pos_miu_application.views.Fragement.StaffsFragment;
+import miu.com.pos_miu_application.Views.Fragements.CategoriesFragment;
+import miu.com.pos_miu_application.Views.Fragements.CustomerFragment;
+import miu.com.pos_miu_application.Views.Fragements.MainFragment;
+import miu.com.pos_miu_application.Views.Fragements.OrdersFragment;
+import miu.com.pos_miu_application.Views.Fragements.ProductsFragment;
+import miu.com.pos_miu_application.Views.Fragements.StaffsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -104,6 +105,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_staff:
                 replaceFragement(new StaffsFragment());
+                break;
+            case R.id.nav_customer:
+                replaceFragement(new CustomerFragment());
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

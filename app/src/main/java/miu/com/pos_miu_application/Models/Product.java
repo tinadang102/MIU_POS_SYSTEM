@@ -1,6 +1,4 @@
-package miu.com.pos_miu_application.views.Models;
-import android.media.Image;
-import android.widget.ImageView;
+package miu.com.pos_miu_application.Models;
 
 import java.io.Serializable;
 

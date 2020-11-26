@@ -1,4 +1,4 @@
-package miu.com.pos_miu_application.views.Fragement;
+package miu.com.pos_miu_application.Views.Fragements;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

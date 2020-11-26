@@ -1,5 +1,6 @@
-package miu.com.pos_miu_application.views.Fragement;
+package miu.com.pos_miu_application.Views.Fragements;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -22,16 +24,18 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
-import  miu.com.pos_miu_application.views.Activities.addCustomer;
-import  miu.com.pos_miu_application.views.Activities.delivery;
+import miu.com.pos_miu_application.Adapters.OrderDetailAdapter;
+import miu.com.pos_miu_application.Adapters.ProductAdapter;
+import miu.com.pos_miu_application.Models.Product;
 import miu.com.pos_miu_application.R;
-import miu.com.pos_miu_application.views.Adapters.ProductAdapter;
-import miu.com.pos_miu_application.views.Adapters.OrderDetailAdapter;
-import miu.com.pos_miu_application.views.Models.Product;
+import miu.com.pos_miu_application.Views.Activities.addCustomer;
+import miu.com.pos_miu_application.Views.Activities.delivery;
+
 
 public class MainFragment extends Fragment {
-    ImageView imgAddCus;
-    TextView txtSelection;
+    ImageView imgAddCus,imgHinhCustom;
+    TextView txtSelection,txtTenCustom,txtGiaCustom;
+    EditText edtCusName,edtTotal, edtPay, edtDiscount,edtReceive,edtReturn;
     Spinner spnFilter;
     GridView gvProducts;
     ListView lstOrder;
@@ -39,12 +43,15 @@ public class MainFragment extends Fragment {
     ProductAdapter productAdapter;
     Button btnSaveMain, btnReset,btnPBCash,btnPBCard,btnWallet;
     RadioButton rdOrder, rdShipment;
-    ArrayList<Product>ds = new ArrayList<>();
+    ArrayList<Product>ds;
+    ArrayList<Product>ds2;
+    Intent intent;
+    double Total=0;
     String arr[]={
             "All products",
             "Category",
             "Top  products"};
-
+    Product product;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -58,22 +65,60 @@ public class MainFragment extends Fragment {
 
         }catch (Exception ex){}
         addEvents();
+        for(int i=0;i<ds2.size();i++){
+            Total= Total + ds2.get(i).getPrice();
+        }
+        edtTotal.setText(Total+"");
+        edtDiscount.setText(""+0);
+        edtPay.setText(Double.parseDouble(edtTotal.getText().toString())-Double.parseDouble(edtDiscount.getText().toString())+"");
+
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode ==0 && resultCode==1){
+            edtCusName.setHint("");
+            edtCusName.setText(data.getStringExtra("ten"));
+        }
+    }
+
     private void addEvents() {
+        gvProducts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Product sp= productAdapter.getItem(position);
+                Dialog dialog= new Dialog(getContext());
+                dialog.setContentView(R.layout.dialog_product);
+
+                txtTenCustom= dialog.findViewById(R.id.txtTenCustom);
+                txtGiaCustom=dialog.findViewById(R.id.txtPriceCustom);
+                imgHinhCustom=dialog.findViewById(R.id.imgHinhCustom);
+                imgHinhCustom.setImageResource(sp.getImage());
+                txtTenCustom.setText(sp.getName());
+                txtGiaCustom.setText(sp.getPrice()+"");
+                dialog.show();
+
+                Toast.makeText(view.getContext(), "Hello",Toast.LENGTH_LONG).show();
+                /*intent= new Intent(getActivity(),custom_product.class);
+                intent.putExtra("id",position);
+                startActivity(intent);*/
+            }
+        });
         imgAddCus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), addCustomer.class);
-                startActivity(intent);
+                intent = new Intent(getActivity(), addCustomer.class);
+                intent.putExtra("n","Add customer");
+                startActivityForResult(intent,0);
             }
         });
         btnSaveMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(rdShipment.isChecked()){
-                    Intent intent= new Intent(getActivity(),delivery.class);
+                    Intent intent= new Intent(getActivity(), delivery.class);
                     startActivity(intent);
                 }
                 else
@@ -106,6 +151,7 @@ public class MainFragment extends Fragment {
         });
     }
 
+
     private void addViews(View view) {
         imgAddCus=view.findViewById(R.id.imgAddCus);
         txtSelection=view.findViewById(R.id.txtSelection);
@@ -119,10 +165,29 @@ public class MainFragment extends Fragment {
         btnPBCash=view.findViewById(R.id.btnPBCash);
         btnPBCard=view.findViewById(R.id.btnPBCard);
         btnWallet=view.findViewById(R.id.btnWallet);
+        edtCusName=view.findViewById(R.id.edtCusName);
+        edtTotal=view.findViewById(R.id.edtTotal);
+        edtDiscount=view.findViewById(R.id.editDiscount);
+        edtPay=view.findViewById(R.id.edtPay);
+        edtReceive=view.findViewById(R.id.edtReceive);
+        edtReturn=view.findViewById(R.id.edtReturn);
     }
-
     private void addData() {
-        ds.add(new Product("Barbara High-Waist Super Skinny Ankle in Higher Love",195.00,R.drawable.p1));
+        ds=new ArrayList<Product>();
+        ds.add(new Product("Higher Love",195.00,R.drawable.p1));
+        ds.add(new Product("Frost Printed Hoodie",119.95,R.drawable.p2));
+        ds.add(new Product("Revolution 5 EXT",64.95,R.drawable.p3));
+        ds.add(new Product("Striped Turtleneck Sweater",69.45,R.drawable.p4));
+        ds.add(new Product("Dora 05",130.00,R.drawable.p6));
+        ds.add(new Product("Frost Printed Hoodie",39.45,R.drawable.p5));
+        ds.add(new Product("Rory Classic Sneaker",78.00,R.drawable.p7));
+        ds.add(new Product("Deon",234.95,R.drawable.p8));
+        ds.add(new Product("Shearling Boyfriend Pants",275.00,R.drawable.p9));
+        ds.add(new Product("Down Shorts",225.00,R.drawable.p10));
+        ds.add(new Product("Down Shorts 2",225.00,R.drawable.p11));
+
+
+        ds.add(new Product("Higher Love",195.00,R.drawable.p1));
         ds.add(new Product("Frost Printed Hoodie",119.95,R.drawable.p2));
         ds.add(new Product("Revolution 5 EXT",64.95,R.drawable.p3));
         ds.add(new Product("Striped Turtleneck Sweater",69.45,R.drawable.p4));
@@ -136,11 +201,16 @@ public class MainFragment extends Fragment {
     }
 
     private void ShowItemOrder() {
-        orderDetailAdapter = new OrderDetailAdapter(getContext(),R.layout.fragment_main, ds);
+        ds2=new ArrayList<Product>();
+        ds2.add(new Product("Higher Love",195.00,R.drawable.p1));
+        ds2.add(new Product("Frost Printed Hoodie",119.95,R.drawable.p2));
+        orderDetailAdapter = new OrderDetailAdapter(getContext(),R.layout.fragment_main, ds2);
         lstOrder.setAdapter(orderDetailAdapter);
+
     }
 
     private void ShowListProduct() {
+
         productAdapter= new ProductAdapter(getContext(),R.layout.fragment_main, ds);
         gvProducts.setAdapter(productAdapter);
     }

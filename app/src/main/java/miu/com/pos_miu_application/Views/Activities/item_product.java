@@ -1,10 +1,7 @@
-package miu.com.pos_miu_application.views.Activities;
+package miu.com.pos_miu_application.Views.Activities;
 
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +9,7 @@ import android.widget.BaseAdapter;
 
 import java.util.List;
 
-import miu.com.pos_miu_application.R;
-import miu.com.pos_miu_application.views.Models.Product;
+import miu.com.pos_miu_application.Models.Product;
 
 public class item_product extends BaseAdapter {
     private List<Product> lst;

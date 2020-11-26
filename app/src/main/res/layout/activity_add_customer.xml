@@ -20,13 +20,14 @@
         android:textSize="25sp"/>
 
     <EditText
+        android:id="@+id/edtNameCus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="3sp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="fill customer's name here"
-        android:textSize="20sp"
-        android:layout_margin="3sp"/>
+        android:inputType="textPersonName"
+        android:textSize="20sp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

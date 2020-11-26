@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.Activities.item_product"></activity>
-        <activity android:name=".views.Activities.item_orderdetail" />
-        <activity android:name=".views.Activities.delivery" />
-        <activity android:name=".views.Activities.custom_product" />
-        <activity android:name=".views.Activities.addCustomer" />
-        <activity android:name=".views.Activities.LoginActivity" />
-        <activity android:name=".views.Activities.MainActivity">
+        <activity android:name=".Views.Activities.item_product"></activity>
+        <activity android:name=".Views.Activities.item_orderdetail" />
+        <activity android:name=".Views.Activities.delivery" />
+        <activity android:name=".Views.Activities.custom_product" />
+        <activity android:name=".Views.Activities.addCustomer" />
+        <activity android:name=".Views.Activities.LoginActivity" />
+        <activity android:name=".Views.Activities.MainActivity">
             <intent-filter>
                 <action
                     android:name="android.intent.action.MAIN"

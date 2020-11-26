@@ -1,6 +1,5 @@
-package miu.com.pos_miu_application.views.Activities;
-
-import androidx.fragment.app.FragmentActivity;
+package miu.com.pos_miu_application.Views.Activities;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,35 +8,35 @@ import android.widget.Toast;
 
 import miu.com.pos_miu_application.R;
 
-public class addCustomer extends FragmentActivity {
-    Button btnSave,btnClose;
+public class delivery extends AppCompatActivity {
+    Button btnSaveDelivery, btnCloseDelivery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_customer);
+        setContentView(R.layout.activity_delivery);
         addControls();
         addEvents();
     }
 
     private void addEvents() {
-        btnSave.setOnClickListener(new View.OnClickListener() {
+        btnCloseDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(addCustomer.this,"Save successfully!",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
-        btnClose.setOnClickListener(new View.OnClickListener() {
+        btnSaveDelivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(delivery.this,"Save successfully!",Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
     }
 
     private void addControls() {
-        btnSave= findViewById(R.id.btnSaveDelivery);
-        btnClose=findViewById(R.id.btnCloseDelivery);
+        btnSaveDelivery=findViewById(R.id.btnSaveDelivery);
+        btnCloseDelivery=findViewById(R.id.btnCloseDelivery);
     }
 }

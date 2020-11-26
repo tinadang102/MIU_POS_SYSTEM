@@ -1,5 +1,4 @@
-package miu.com.pos_miu_application.views.Adapters;
-import android.app.Activity;
+package miu.com.pos_miu_application.Adapters;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,13 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import miu.com.pos_miu_application.Models.Product;
 import miu.com.pos_miu_application.R;
-import miu.com.pos_miu_application.views.Models.Product;
 
 public class OrderDetailAdapter extends ArrayAdapter<Product> {
     public OrderDetailAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Product> objects) {
@@ -62,4 +59,3 @@ public class OrderDetailAdapter extends ArrayAdapter<Product> {
 //        return v;
 //    }
 }
-

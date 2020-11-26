@@ -1,4 +1,4 @@
-package miu.com.pos_miu_application.views.Fragement;
+package miu.com.pos_miu_application.Views.Fragements;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,12 +11,12 @@ import androidx.fragment.app.Fragment;
 
 import miu.com.pos_miu_application.R;
 
-public class OrdersFragment extends Fragment {
+public class StaffsFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_order, container, false);
+        View view = inflater.inflate(R.layout.fragment_staff, container, false);
         return view;
     }
 }

@@ -1,4 +1,4 @@
-package miu.com.pos_miu_application.views.Activities;
+package miu.com.pos_miu_application.Views.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 

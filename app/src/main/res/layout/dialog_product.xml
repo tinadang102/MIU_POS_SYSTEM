@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgHinhCustom"
+            android:layout_width="400sp"
+            android:layout_height="470sp"
+            android:layout_margin="3sp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTenCustom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên sản phẩm"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/txtMoTaCustom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mô tả sản phẩm"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/txtPriceCustom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Giá sản phẩm"
+                android:textColor="@color/design_default_color_error"
+                android:textSize="30sp" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="?android:attr/listDivider" />
+
+            <TextView
+                android:id="@+id/txtSizeCustom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Size:"
+                android:textSize="25sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/SizeXS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="XS"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/SizeS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="S"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/SizeM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="M"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/SizeL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="L"
+                        android:textSize="20sp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/SizeXL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="XL"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/SizeXXL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="XXL"
+                        android:textSize="20sp" />
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Color:"
+                android:textSize="25sp" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/ColorRed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="Red"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/ColorYellow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="Yellow"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/ColorBlue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="blue"
+                        android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/ColorBlack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3sp"
+                        android:background="@drawable/stroke"
+                        android:text="black"
+                        android:textSize="20sp" />
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Items:"
+                    android:textSize="25sp" />
+
+                <Button
+
+                    android:layout_width="70sp"
+                    android:layout_height="70sp"
+                    android:layout_margin="3sp"
+                    android:background="@drawable/stroke"
+                    android:text="-"
+                    android:textSize="40sp" />
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/txtSLCustom"
+                    android:layout_width="70sp"
+                    android:layout_height="70sp"
+                    android:text="1"
+                    android:background="@drawable/stroke"
+                    android:textSize="30sp"
+                    android:gravity="center"/>
+
+                <Button
+                    android:id="@+id/imgGiamCustom"
+                    android:layout_width="70sp"
+                    android:layout_height="70sp"
+                    android:layout_gravity="center"
+                    android:layout_margin="3sp"
+                    android:background="@drawable/stroke"
+                    android:text="+"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/txtTonKho"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="30 items in inventory"
+                    android:textSize="20sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAddCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Add"
+                    android:layout_margin="3sp"/>
+
+                <Button
+                    android:id="@+id/btnCloseCustom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Close"
+                    android:layout_margin="3sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
